@@ -66,24 +66,64 @@ body {
     padding: 25px;
     border: 1px solid #000; }
     .form__body > div {
+      position: relative;
       margin-bottom: 25px; }
     .form__body label {
       display: inline-block; }
-  .form .formBody__roomsCount label {
-    width: 30px; }
+  .form .formBody__roomsCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .formBody__roomsCount h2 {
+      margin-right: 5px; }
+    .form .formBody__roomsCount label {
+      width: 20px;
+      margin-right: 10px; }
+    .form .formBody__roomsCount input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .formBody__roomsCount input {
+          width: 100%; } }
+  .form .formBody__size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .formBody__size h2 {
+      margin-right: 5px; }
+    .form .formBody__size label {
+      width: 60px;
+      margin-right: 10px; }
+    .form .formBody__size input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .formBody__size input {
+          width: 100%; } }
+  .form .formBody__materials > div {
+    display: inline-block;
+    margin-bottom: 10px; }
   .form .formBody__rooms > div {
     display: inline-block;
     margin-bottom: 10px; }
   .form .formBody__work > div {
     display: inline-block;
     margin-bottom: 10px; }
-  .form .formBody__materials > div {
-    display: inline-block;
-    margin-bottom: 10px; }
-  .form .formBody__size label {
-    width: 70px; }
-  .form .formBody__budget label {
-    width: 75px; }
+  .form .formBody__budget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .formBody__budget h2 {
+      margin-right: 5px; }
+    .form .formBody__budget label {
+      width: 75px;
+      margin-right: 10px; }
+    .form .formBody__budget input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .formBody__budget input {
+          width: 100%; } }
   .form .formBody__sizes label {
     width: 200px; }
   .form .formBody__sizes > div {
@@ -95,8 +135,7 @@ body {
       margin-bottom: 10px; }
   .form h2 {
     font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 10px; }
+    font-weight: 600; }
   .form label {
     font-size: 18px; }
   .form input {
@@ -113,7 +152,8 @@ body {
   .form input[type='file'],
   .form input[type='date'],
   .form input[type='time'] {
-    width: 250px;
+    width: 300px;
+    box-sizing: border-box;
     max-width: 100%; }
   .form textarea {
     resize: none; }
