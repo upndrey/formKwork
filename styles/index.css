@@ -170,6 +170,7 @@ body {
   .form input[type='file'],
   .form input[type='date'],
   .form input[type='time'] {
+    background-color: transparent;
     width: 300px;
     box-sizing: border-box;
     max-width: 100%; }
