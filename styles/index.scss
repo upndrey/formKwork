@@ -237,7 +237,7 @@ body {
   }
 
   input[type='file'],
-  input[type='date'],
+  .formBody__date>input,
   input[type='time'] {
     background-color: transparent;
     width: 300px;

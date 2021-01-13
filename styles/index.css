@@ -168,7 +168,7 @@ body {
     border-radius: 2px;
     padding: 10px 15px; }
   .form input[type='file'],
-  .form input[type='date'],
+  .form .formBody__date > input,
   .form input[type='time'] {
     background-color: transparent;
     width: 300px;
@@ -176,7 +176,7 @@ body {
     max-width: 100%; }
     @media screen and (max-width: 480px) {
       .form input[type='file'],
-      .form input[type='date'],
+      .form .formBody__date > input,
       .form input[type='time'] {
         width: 100%; } }
   .form textarea {
