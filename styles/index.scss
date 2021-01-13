@@ -170,11 +170,33 @@ body {
       }
     }
     &__sizes {
+      &>div {
+        width: 100%;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        &.js_displaynone {
+          display: none;
+        }
+
+      }
+      h2 {
+        margin-right: 5px;
+      }
       label{
         width: 200px;
+        margin-right: 10px;
+        @include phones {
+          width: auto;
+        }
       }
-      &>div {
-        margin-bottom: 10px;
+      input {
+        flex-grow: 1;
+        @include phones {
+          width: 100%;
+        }
       }
     }
 
@@ -220,6 +242,9 @@ body {
     width: 300px;
     box-sizing: border-box;
     max-width: 100%;
+    @include phones {
+      width: 100%;
+    }
   }
 
   textarea {

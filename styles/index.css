@@ -124,10 +124,28 @@ body {
       @media screen and (max-width: 480px) {
         .form .formBody__budget input {
           width: 100%; } }
-  .form .formBody__sizes label {
-    width: 200px; }
   .form .formBody__sizes > div {
-    margin-bottom: 10px; }
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .formBody__sizes > div.js_displaynone {
+      display: none; }
+  .form .formBody__sizes h2 {
+    margin-right: 5px; }
+  .form .formBody__sizes label {
+    width: 200px;
+    margin-right: 10px; }
+    @media screen and (max-width: 480px) {
+      .form .formBody__sizes label {
+        width: auto; } }
+  .form .formBody__sizes input {
+    flex-grow: 1; }
+    @media screen and (max-width: 480px) {
+      .form .formBody__sizes input {
+        width: 100%; } }
   .form .formBody__text {
     display: flex;
     flex-direction: column; }
@@ -155,6 +173,11 @@ body {
     width: 300px;
     box-sizing: border-box;
     max-width: 100%; }
+    @media screen and (max-width: 480px) {
+      .form input[type='file'],
+      .form input[type='date'],
+      .form input[type='time'] {
+        width: 100%; } }
   .form textarea {
     resize: none; }
   .form input[type='submit'] {
