@@ -1,0 +1,49 @@
+$headerBgColor: #282E3A;
+$headerSecondaryColor: #6f11ff;
+
+$bodyColor: #ffffff;
+$bodySecondaryColor: #f7f6fe;
+
+$alertColor: #ff5f60;
+$greyColor: #a9a5a5;
+$shadowColor: #183251;
+
+$desktopWidth: 1120px;
+$desktopWidthBound: 1220px;
+$laptopWidthBound: 1024px;
+$tabletsWidthBound: 768px;
+$phonesWidthBound: 480px;
+
+@mixin icon($link, $w, $h, $isBefore:true, $pos:relative) {
+  @if $isBefore {
+    content: '';
+  }
+  position: $pos;
+  display: block;
+  background-image: url($link);
+  -webkit-background-size: cover;
+  background-size: cover;
+  width: $w;
+  height: $h;
+}
+
+@mixin desktop {
+  @media screen and (max-width: $desktopWidthBound) {
+    @content;
+  }
+}
+@mixin laptop {
+  @media screen and (max-width: $laptopWidthBound) {
+    @content;
+  }
+}
+@mixin tablets {
+  @media screen and (max-width: $tabletsWidthBound) {
+    @content;
+  }
+}
+@mixin phones {
+  @media screen and (max-width: $phonesWidthBound) {
+    @content;
+  }
+}

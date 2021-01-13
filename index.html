@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+
+    <meta name="HandheldFriendly" content="true"/>
+    <link rel="stylesheet" href="./styles/index.css">
+    <title>Form</title>
+</head>
+<body>
+<div class="form">
+    <div class="form__header">
+        <a href="index.html#fullhouse" class="fullhouseLink js_form__active">Full house</a>
+        <a href="index.html#partial" class="partialLink">Partial</a>
+        <a href="index.html#maintenance" class="maintenanceLink">Maintenance</a>
+    </div>
+    <form method="post" action="#" class="form__body fullhouse">
+        <div class="formBody__roomsCount">
+            <h2>Total number of rooms:</h2>
+            <label for="fullhouse__rooms" class="js_rangeLabel">2</label>
+            <input type="range" id="fullhouse__rooms" name="rooms" value="2" min="2" max="15">
+        </div>
+        <div class="formBody__size">
+            <h2>Size:</h2>
+            <label for="fullhouse__size" class="js_rangeLabel"><span>5</span> M²</label>
+            <input type="range" id="fullhouse__size" name="size" value="5" min="5" max="100">
+        </div>
+        <div class="formBody__materials">
+            <h2>Preferred materials:</h2>
+            <div>
+                <input type="checkbox" id="fullhouse__laminate" name="laminate">
+                <label for="fullhouse__laminate">Laminate</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__parquet" name="parquet">
+                <label for="fullhouse__parquet">Parquet</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__naturalwood" name="naturalwood">
+                <label for="fullhouse__naturalwood">Natural wood</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__tiled" name="tiled">
+                <label for="fullhouse__tiled">Tiled</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__naturalstone" name="naturalstone">
+                <label for="fullhouse__naturalstone">Natural stone</label>
+            </div>
+        </div>
+        <div class="formBody__date">
+            <h2>When do you plan to start renovation?</h2>
+            <input type="date" name="date" id="fullhouse__date" placeholder="Date" required>
+        </div>
+        <div class="formBody__time">
+            <h2>Planned time:</h2>
+            <input type="time" name="time" id="fullhouse__time" min="09:00" max="18:00" placeholder="Date" required>
+        </div>
+        <div class="formBody__budget">
+            <h2>Planned budget:</h2>
+            <label for="fullhouse__budget" class="js_rangeLabel">£<span>20000</span></label>
+            <input type="range" id="fullhouse__budget" name="rooms" value="20000" min="20000" step="1000" max="350000">
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
+            <input type="text" placeholder="Phone number*" name="phone" id="fullhouse__phone">
+            <input type="text" placeholder="Full address & post code*" name="address" id="fullhouse__address">
+            <input type="email" placeholder="Your e-mail" name="email" id="fullhouse__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Send">
+    </form>
+    <form method="post" action="#" class="form__body partial js_displaynone">
+        <div class="formBody__rooms">
+            <h2>Select rooms:</h2>
+            <div>
+                <input type="checkbox" id="partial__bathroom" name="bathroom">
+                <label for="partial__bathroom">Bathroom</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__bedroom" name="bedroom">
+                <label for="partial__bedroom">Bedroom</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__hallway" name="hallway">
+                <label for="partial__hallway">Hallway</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__kitchen" name="kitchen">
+                <label for="partial__kitchen">Kitchen</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__kidsroom" name="kidsroom">
+                <label for="partial__kidsroom">Kids room</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__livingroom" name="livingroom">
+                <label for="partial__livingroom">Living room</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__stairs" name="stairs">
+                <label for="partial__stairs">Stairs</label>
+            </div>
+        </div>
+        <div class="formBody__sizes">
+            <h2>Room sizes:</h2>
+            <div class="bathroomSize js_displaynone">
+                <label for="partial__bathroomSize" class="js_rangeLabel">Bathroom: <span>5</span> M²</label>
+                <input type="range" id="partial__bathroomSize" name="bathroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="bedroomSize js_displaynone">
+                <label for="partial__bedroomSize" class="js_rangeLabel">Bedroom: <span>5</span> M²</label>
+                <input type="range" id="partial__bedroomSize" name="bedroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="hallwaySize js_displaynone">
+                <label for="partial__hallwaySize" class="js_rangeLabel">Hallway: <span>5</span> M²</label>
+                <input type="range" id="partial__hallwaySize" name="hallwaySize" value="5" min="5" max="100">
+            </div>
+            <div class="kitchenSize js_displaynone">
+                <label for="partial__kitchenSize" class="js_rangeLabel">Kitchen: <span>5</span> M²</label>
+                <input type="range" id="partial__kitchenSize" name="kitchenSize" value="5" min="5" max="100">
+            </div>
+            <div class="kidsroomSize js_displaynone">
+                <label for="partial__kidsroomSize" class="js_rangeLabel">Kids room: <span>5</span> M²</label>
+                <input type="range" id="partial__kidsroomSize" name="kidsroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="livingroomSize js_displaynone">
+                <label for="partial__livingroomSize" class="js_rangeLabel">Living room: <span>5</span> M²</label>
+                <input type="range" id="partial__livingroomSize" name="livingroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="stairsSize js_displaynone">
+                <label for="partial__stairsSize" class="js_rangeLabel">Stairs: <span>5</span> M²</label>
+                <input type="range" id="partial__stairsSize" name="stairsSize" value="5" min="5" max="100">
+            </div>
+        </div>
+        <div class="formBody__materials">
+            <h2>Preferred materials:</h2>
+            <div>
+                <input type="checkbox" id="partial__laminate" name="laminate">
+                <label for="partial__laminate">Laminate</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__parquet" name="parquet">
+                <label for="partial__parquet">Parquet</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__naturalwood" name="naturalwood">
+                <label for="partial__naturalwood">Natural wood</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__tiled" name="tiled">
+                <label for="partial__tiled">Tiled</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__naturalstone" name="naturalstone">
+                <label for="partial__naturalstone">Natural stone</label>
+            </div>
+        </div>
+        <div class="formBody__date">
+            <h2>When do you plan to start renovation?</h2>
+            <input type="date" name="date" id="partial__date" placeholder="Date" required>
+        </div>
+        <div class="formBody__time">
+            <h2>Planned time:</h2>
+            <input type="time" name="time" id="partial__time" min="09:00" max="18:00" placeholder="Date" required>
+        </div>
+        <div class="formBody__budget">
+            <h2>Planned budget:</h2>
+            <label for="partial__budget" class="js_rangeLabel">£<span>20000</span></label>
+            <input type="range" id="partial__budget" name="rooms" value="20000" min="20000" step="1000" max="350000">
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
+            <input type="text" placeholder="Phone number*" name="phone" id="partial__phone">
+            <input type="text" placeholder="Full address & post code*" name="address" id="partial__address">
+            <input type="email" placeholder="Your e-mail" name="email" id="partial__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Send">
+    </form>
+    <form method="post" action="#" class="form__body formBody maintenance js_displaynone">
+        <div class="formBody__work">
+            <h2>Types of work:</h2>
+            <div>
+                <input type="checkbox" id="maintenance__carpenter" name="carpenter">
+                <label for="maintenance__carpenter">Carpenter</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__electrical" name="electrical">
+                <label for="maintenance__electrical">Electrical</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__gas" name="gas">
+                <label for="maintenance__gas">Gas</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__gardener" name="gardener">
+                <label for="maintenance__gardener">Gardener</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__generalbuilder" name="generalbuilder">
+                <label for="maintenance__generalbuilder">General builder</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__groutworker" name="groutworker">
+                <label for="maintenance__groutworker">Grout worker</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__painter" name="painter">
+                <label for="maintenance__painter">Painter</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__plumber" name="plumber">
+                <label for="maintenance__plumber">Plumber</label>
+            </div>
+        </div>
+        <div class="formBody__time">
+            <h2>Attach a photo:</h2>
+            <input type="file" name="time" id="maintenance__photo" placeholder="Photo">
+        </div>
+        <div class="formBody__date">
+            <h2>When do you plan to start renovation?</h2>
+            <input type="date" name="date" id="maintenance__date" placeholder="Date" required>
+        </div>
+        <div class="formBody__time">
+            <h2>Planned time:</h2>
+            <input type="time" name="time" id="maintenance__time" min="09:00" max="18:00" placeholder="Date" required>
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
+            <input type="text" placeholder="Phone number*" name="phone" id="maintenance__phone">
+            <input type="text" placeholder="Full address & post code*" name="address" id="maintenance__address">
+            <input type="email" placeholder="Your e-mail" name="email" id="maintenance__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Send">
+    </form>
+</div>
+</body>
+</html>
+<script>
+    function formPages() {
+        let currFormPage = location.hash;
+        let fullhouseDom = document.querySelector(".fullhouse");
+        let partialDom = document.querySelector(".partial");
+        let maintenanceDom = document.querySelector(".maintenance");
+        let fullhouseLinkDom = document.querySelector(".fullhouseLink");
+        let partialLinkDom = document.querySelector(".partialLink");
+        let maintenanceLinkDom = document.querySelector(".maintenanceLink");
+        if( fullhouseDom &&
+            partialDom &&
+            maintenanceDom &&
+            fullhouseLinkDom &&
+            partialLinkDom &&
+            maintenanceLinkDom) {
+            if(currFormPage) {
+                switch (currFormPage) {
+                    case "#fullhouse":
+                        fullhouseDom.classList.remove("js_displaynone");
+                        partialDom.classList.add("js_displaynone");
+                        maintenanceDom.classList.add("js_displaynone");
+
+                        fullhouseLinkDom.classList.add("js_form__active");
+                        partialLinkDom.classList.remove("js_form__active");
+                        maintenanceLinkDom.classList.remove("js_form__active");
+                        break;
+                    case "#partial":
+                        fullhouseDom.classList.add("js_displaynone");
+                        partialDom.classList.remove("js_displaynone");
+                        maintenanceDom.classList.add("js_displaynone");
+
+                        fullhouseLinkDom.classList.remove("js_form__active");
+                        partialLinkDom.classList.add("js_form__active");
+                        maintenanceLinkDom.classList.remove("js_form__active");
+                        break;
+                    case "#maintenance":
+                        fullhouseDom.classList.add("js_displaynone");
+                        partialDom.classList.add("js_displaynone");
+                        maintenanceDom.classList.remove("js_displaynone");
+
+                        fullhouseLinkDom.classList.remove("js_form__active");
+                        partialLinkDom.classList.remove("js_form__active");
+                        maintenanceLinkDom.classList.add("js_form__active");
+                        break;
+                }
+            }
+        }
+    }
+    formPages();
+    window.addEventListener('popstate', formPages);
+    let jsRangeLabelDom = document.querySelectorAll(".js_rangeLabel");
+    if(jsRangeLabelDom.length) {
+        jsRangeLabelDom.forEach(function (label) {
+            let input = label.nextElementSibling;
+            if(input.tagName === "INPUT") {
+                input.addEventListener("input", function (e) {
+                    let span = label.getElementsByTagName("span");
+                    if(span.length)
+                        span[0].innerText = input.value;
+                    else
+                        label.innerText = input.value;
+                });
+            }
+        });
+    }
+    let partialRooms = document.querySelectorAll(".formBody__rooms>div>input");
+    if(partialRooms.length) {
+        partialRooms.forEach(function (room) {
+            room.addEventListener("input", function (e) {
+                switch (room.name) {
+                    case "bathroom":
+                        document.querySelector(".bathroomSize").classList.toggle("js_displaynone");
+                        break;
+                    case "bedroom":
+                        document.querySelector(".bedroomSize").classList.toggle("js_displaynone");
+                        break;
+                    case "hallway":
+                        document.querySelector(".hallwaySize").classList.toggle("js_displaynone");
+                        break;
+                    case "kitchen":
+                        document.querySelector(".kitchenSize").classList.toggle("js_displaynone");
+                        break;
+                    case "kidsroom":
+                        document.querySelector(".kidsroomSize").classList.toggle("js_displaynone");
+                        break;
+                    case "livingroom":
+                        document.querySelector(".livingroomSize").classList.toggle("js_displaynone");
+                        break;
+                    case "stairs":
+                        document.querySelector(".stairsSize").classList.toggle("js_displaynone");
+                        break;
+                }
+            });
+        });
+    }
+</script>
+

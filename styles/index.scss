@@ -1,0 +1,210 @@
+@import "mixins";
+
+/* GLOBAL */
+body {
+  padding: 0;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;;
+  font-size: 20px;
+  min-width: 320px;
+}
+
+.notImplemented {
+  display: none;
+}
+
+.hidden {
+  visibility: hidden;
+}
+
+.displaynone {
+  display: none;
+}
+
+
+
+/* /GLOBAL */
+
+/* FORM */
+.form {
+  max-width: $tabletsWidthBound;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-weight: 300;
+
+  @include desktop{
+    max-width: $tabletsWidthBound - 1px;
+  }
+
+  @include laptop{
+    max-width: $tabletsWidthBound - 1px;
+  }
+
+  @include tablets{
+    max-width: $phonesWidthBound - 1px;
+  }
+
+  @include phones{
+    max-width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+  }
+
+  &__header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+
+    &>* {
+      flex-grow: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      box-sizing: border-box;
+      border: 1px solid #000;
+      padding: 10px;
+      text-decoration: none;
+      &:visited {
+        color: inherit;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 25px;
+    border: 1px solid #000;
+
+    &>div {
+      margin-bottom: 25px;
+    }
+    label {
+      display: inline-block;
+    }
+  }
+  .formBody {
+    &__roomsCount {
+      label{
+        width: 30px;
+      }
+    }
+    &__rooms {
+      &>div {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+    &__work {
+      &>div {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+    &__materials {
+      &>div {
+        display: inline-block;
+        margin-bottom: 10px;
+      }
+    }
+
+    &__size {
+      label{
+        width: 70px;
+      }
+    }
+    &__budget {
+      label{
+        width: 75px;
+      }
+    }
+    &__sizes {
+      label{
+        width: 200px;
+      }
+      &>div {
+        margin-bottom: 10px;
+      }
+    }
+
+    &__text {
+      display: flex;
+      flex-direction: column;
+      &>* {
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  h2 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+
+  label {
+    font-size: 18px;
+  }
+
+  input {
+    font-family: 'Roboto', sans-serif;
+  }
+
+  input[type='text'],
+  input[type='email'],
+  input[type='date'],
+  input[type='time'],
+  input[type='file'],
+  textarea {
+    border: 1px solid #000;
+    border-radius: 2px;
+    padding: 10px 15px;
+  }
+
+  input[type='file'] {
+  }
+
+  input[type='file'],
+  input[type='date'],
+  input[type='time'] {
+    width: 250px;
+    max-width: 100%;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  input[type='submit'] {
+    padding: 10px 15px;
+    background: #000;
+    color: #fff;
+    border: 1px solid #fff;
+    transition: .3s ease-in-out;
+    cursor: pointer;
+    font-weight: bold;
+    &:hover {
+      background: #fff;
+      color: #000;
+      border: 1px solid #000;
+    }
+  }
+
+
+  .js_displaynone {
+    display: none;
+  }
+
+  .js_form__active {
+    transition: .3s ease-in-out;
+    background: #000;
+    color: #fff;
+  }
+}
+
+/* /FORM */
