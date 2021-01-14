@@ -77,7 +77,7 @@
         </div>
         <div class="formBody__checkbox">
             <div>
-                <input type="checkbox" id="fullhouse__noBudget" name="noBudget">
+                <input type="checkbox" id="fullhouse__noBudget" name="noBudget" class="noBudget">
                 <label for="fullhouse__noBudget">the budget has not yet been decided</label>
             </div>
         </div>
@@ -202,7 +202,7 @@
         </div>
         <div class="formBody__checkbox">
             <div>
-                <input type="checkbox" id="partial__noBudget" name="noBudget">
+                <input type="checkbox" id="partial__noBudget" name="noBudget" class="noBudget">
                 <label for="partial__noBudget">the budget has not yet been decided</label>
             </div>
         </div>
@@ -401,6 +401,20 @@
                             break;
                     }
                 });
+            });
+        }
+        let noBudjetPartialDom = document.getElementById("partial__noBudget");
+        if(noBudjetPartialDom) {
+            noBudjetPartialDom.addEventListener("input", function (e) {
+                let budjetPartialDom = document.getElementById("partial__budget");
+                budjetPartialDom.parentElement.classList.toggle("displaynone");
+            });
+        }
+        let noBudjetFullhouseDom = document.getElementById("fullhouse__noBudget");
+        if(noBudjetFullhouseDom) {
+            noBudjetFullhouseDom.addEventListener("input", function (e) {
+                let budjetFullhouseDom = document.getElementById("fullhouse__budget");
+                budjetFullhouseDom.parentElement.classList.toggle("displaynone");
             });
         }
     });

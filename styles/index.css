@@ -178,6 +178,8 @@ body {
       @media screen and (max-width: 480px) {
         .form .formBody__budget input {
           width: 100%; } }
+    .form .formBody__budget.displaynone {
+      display: none; }
   .form .formBody__sizes > div {
     width: 100%;
     margin-bottom: 10px;
