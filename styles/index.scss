@@ -133,8 +133,29 @@ body {
       }
     }
     &__materials {
+      &>div {
+        width: 150px;
+      }
     }
     &__rooms {
+      &>div {
+        width: 125px;
+      }
+    }
+    &__work {
+      &>div {
+        width: 160px;
+      }
+    }
+    &__time {
+      &>div {
+        width: 160px;
+      }
+    }
+    &__date {
+      &>div {
+        width: 180px;
+      }
     }
     &__checkbox {
       display: flex;
@@ -149,6 +170,9 @@ body {
         margin-right: 15px;
       }
       label {
+        width: 100%;
+        text-align: center;
+        box-sizing: border-box;
         padding: 5px 10px;
         background: #fff;
         border: 1px solid #000;
@@ -184,8 +208,19 @@ body {
         bottom: 2px;
         box-shadow: 2px 2px 4px 0px #000;
       }
-    }
-    &__work {
+
+      @include phones {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        h2 {
+        }
+        &>div {
+          width: 100%;
+          margin-bottom: 15px;
+          margin-right: 0;
+        }
+      }
     }
     &__budget {
       display: flex;
@@ -271,11 +306,8 @@ body {
   }
 
   input[type='file'] {
-  }
-
-  input[type='file'],
-  .formBody__date>input,
-  input[type='time'] {
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   textarea {
