@@ -252,6 +252,15 @@ body {
       }
     }
     &__sizes {
+      &>h2 {
+        margin-bottom: 5px;
+      }
+      &>span {
+        font-size: 15px;
+        display: block;
+        margin-bottom: 15px;
+        color: #333;
+      }
       &>div {
         width: 100%;
         margin-bottom: 10px;

@@ -186,6 +186,13 @@ body {
           width: 100%; } }
     .form .formBody__budget.displaynone {
       display: none; }
+  .form .formBody__sizes > h2 {
+    margin-bottom: 5px; }
+  .form .formBody__sizes > span {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    color: #333; }
   .form .formBody__sizes > div {
     width: 100%;
     margin-bottom: 10px;
