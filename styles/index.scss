@@ -157,7 +157,6 @@ body {
         position: relative;
         right: 2px;
         bottom: 2px;
-        border-radius: 3px;
         box-shadow: 1px 1px 1px 5px #000;
         &:hover {
           background: #000;
@@ -268,7 +267,6 @@ body {
   input[type='file'],
   textarea {
     border: 1px solid #000;
-    border-radius: 2px;
     padding: 10px 15px;
   }
 
