@@ -134,7 +134,7 @@ body {
     }
     &__materials {
       &>div {
-        width: 150px;
+        width: 160px;
       }
     }
     &__rooms {
@@ -154,12 +154,19 @@ body {
     }
     &__date {
       &>div {
-        width: 180px;
+        width: 225px;
+        @include tablets {
+          width: 180px;
+        }
       }
     }
     &__checkbox {
       display: flex;
       flex-wrap: wrap;
+      @include tablets {
+        justify-content: center;
+
+      }
       h2 {
         width: 100%;
         flex-grow: 1;
@@ -308,9 +315,13 @@ body {
     padding: 10px 15px;
   }
 
-  input[type='file'] {
+  input[type='file'], input[type='date'] {
     max-width: 100%;
+    width: 300px;
     box-sizing: border-box;
+    @include phones {
+      width: 100%;
+    }
   }
 
   textarea {

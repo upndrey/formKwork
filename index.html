@@ -50,6 +50,18 @@
                 <input type="checkbox" id="fullhouse__naturalstone" name="naturalstone">
                 <label for="fullhouse__naturalstone">Natural stone</label>
             </div>
+            <div>
+                <input type="checkbox" id="fullhouse__venetianplaster" name="venetianplaster">
+                <label for="maintenance__venetianplaster">Venetian Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__marble" name="marble">
+                <label for="maintenance__marble">Marble</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__artisticplaster" name="artisticplaster">
+                <label for="maintenance__artisticplaster">Artistic Plaster</label>
+            </div>
         </div>
         <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
@@ -121,6 +133,18 @@
                 <input type="checkbox" id="partial__stairs" name="stairs">
                 <label for="partial__stairs">Stairs</label>
             </div>
+            <div>
+                <input type="checkbox" id="partial__extension" name="extension">
+                <label for="partial__extension">Extension</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__loft" name="loft">
+                <label for="partial__loft">Loft</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__garge" name="garge">
+                <label for="partial__garge">Garge</label>
+            </div>
         </div>
         <div class="formBody__sizes">
             <h2>Room sizes:</h2>
@@ -152,6 +176,18 @@
                 <label for="partial__stairsSize" class="js_rangeLabel">Stairs: <span>5</span> M²</label>
                 <input type="range" id="partial__stairsSize" name="stairsSize" value="5" min="5" max="100">
             </div>
+            <div class="extensionSize js_displaynone">
+                <label for="partial__extensionSize" class="js_rangeLabel">Extension: <span>5</span> M²</label>
+                <input type="range" id="partial__extensionSize" name="extensionSize" value="5" min="5" max="100">
+            </div>
+            <div class="loftSize js_displaynone">
+                <label for="partial__loftSize" class="js_rangeLabel">Loft: <span>5</span> M²</label>
+                <input type="range" id="partial__loftSize" name="loftSize" value="5" min="5" max="100">
+            </div>
+            <div class="gargeSize js_displaynone">
+                <label for="partial__gargeSize" class="js_rangeLabel">Garge: <span>5</span> M²</label>
+                <input type="range" id="partial__gargeSize" name="gargeSize" value="5" min="5" max="100">
+            </div>
         </div>
         <div class="formBody__materials formBody__checkbox">
             <h2>Preferred materials:</h2>
@@ -174,6 +210,18 @@
             <div>
                 <input type="checkbox" id="partial__naturalstone" name="naturalstone">
                 <label for="partial__naturalstone">Natural stone</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__venetianplaster" name="venetianplaster">
+                <label for="maintenance__venetianplaster">Venetian Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__marble" name="marble">
+                <label for="maintenance__marble">Marble</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__artisticplaster" name="artisticplaster">
+                <label for="maintenance__artisticplaster">Artistic Plaster</label>
             </div>
         </div>
         <div class="formBody__date formBody__checkbox">
@@ -255,32 +303,9 @@
             <h2>Attach a photo:</h2>
             <input type="file" name="photo" id="maintenance__photo" placeholder="Photo">
         </div>
-        <div class="formBody__date formBody__checkbox">
+        <div class="formBody__datePicker">
             <h2>When do you plan to start renovation?</h2>
-            <div>
-                <input type="radio" id="maintenance__less7" name="days">
-                <label for="maintenance__less7">up to 7 days</label>
-            </div>
-            <div>
-                <input type="radio" id="maintenance__less14" name="days">
-                <label for="maintenance__less14">up to 14 days</label>
-            </div>
-            <div>
-                <input type="radio" id="maintenance__less30" name="days">
-                <label for="maintenance__less30">up to 30 days</label>
-            </div>
-            <div>
-                <input type="radio" id="maintenance__less45" name="days">
-                <label for="maintenance__less45">up to 45 days</label>
-            </div>
-            <div>
-                <input type="radio" id="maintenance__less60" name="days">
-                <label for="maintenance__less60">up to 60 days</label>
-            </div>
-            <div>
-                <input type="radio" id="maintenance__more60" name="days">
-                <label for="maintenance__more60">more than 60 days</label>
-            </div>
+            <input type="date" name="date" id="maintenance__date">
         </div>
         <div class="formBody__time formBody__checkbox">
             <h2>Planned time:</h2>
@@ -399,6 +424,15 @@
                         case "stairs":
                             document.querySelector(".stairsSize").classList.toggle("js_displaynone");
                             break;
+                        case "extension":
+                            document.querySelector(".extensionSize").classList.toggle("js_displaynone");
+                            break;
+                        case "loft":
+                            document.querySelector(".loftSize").classList.toggle("js_displaynone");
+                            break;
+                        case "garge":
+                            document.querySelector(".gargeSize").classList.toggle("js_displaynone");
+                            break;
                     }
                 });
             });
@@ -410,6 +444,7 @@
                 budjetPartialDom.parentElement.classList.toggle("displaynone");
             });
         }
+
         let noBudjetFullhouseDom = document.getElementById("fullhouse__noBudget");
         if(noBudjetFullhouseDom) {
             noBudjetFullhouseDom.addEventListener("input", function (e) {
@@ -419,4 +454,3 @@
         }
     });
 </script>
-
