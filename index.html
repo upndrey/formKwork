@@ -28,7 +28,7 @@
             <label for="fullhouse__size" class="js_rangeLabel"><span>5</span> M²</label>
             <input type="range" id="fullhouse__size" name="size" value="5" min="5" max="100">
         </div>
-        <div class="formBody__materials">
+        <div class="formBody__materials formBody__checkbox">
             <h2>Preferred materials:</h2>
             <div>
                 <input type="checkbox" id="fullhouse__laminate" name="laminate">
@@ -51,13 +51,24 @@
                 <label for="fullhouse__naturalstone">Natural stone</label>
             </div>
         </div>
-        <div class="formBody__date">
+        <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
-            <input type="date" name="date" id="fullhouse__date" required>
-        </div>
-        <div class="formBody__time">
-            <h2>Planned time:</h2>
-            <input type="time" name="time" id="fullhouse__time" min="09:00" max="18:00" required>
+            <div>
+                <input type="checkbox" id="fullhouse__less7" name="less7">
+                <label for="fullhouse__less7">up to 7 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__less14" name="less14">
+                <label for="fullhouse__less14">up to 14 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__less30" name="less30">
+                <label for="fullhouse__less30">up to 30 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="fullhouse__more30" name="more30">
+                <label for="fullhouse__more30">more than 30 days</label>
+            </div>
         </div>
         <div class="formBody__budget">
             <h2>Planned budget:</h2>
@@ -66,7 +77,7 @@
         </div>
         <div class="formBody__text">
             <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="text" placeholder="Phone number*" name="phone" id="fullhouse__phone">
+            <input type="number" placeholder="Phone number*" name="phone" id="fullhouse__phone">
             <input type="text" placeholder="Full address & post code*" name="address" id="fullhouse__address">
             <input type="email" placeholder="Your e-mail" name="email" id="fullhouse__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
@@ -74,7 +85,7 @@
         <input type="submit" value="Send">
     </form>
     <form method="post" action="#" class="form__body partial js_displaynone">
-        <div class="formBody__rooms">
+        <div class="formBody__rooms formBody__checkbox">
             <h2>Select rooms:</h2>
             <div>
                 <input type="checkbox" id="partial__bathroom" name="bathroom">
@@ -136,7 +147,7 @@
                 <input type="range" id="partial__stairsSize" name="stairsSize" value="5" min="5" max="100">
             </div>
         </div>
-        <div class="formBody__materials">
+        <div class="formBody__materials formBody__checkbox">
             <h2>Preferred materials:</h2>
             <div>
                 <input type="checkbox" id="partial__laminate" name="laminate">
@@ -159,13 +170,24 @@
                 <label for="partial__naturalstone">Natural stone</label>
             </div>
         </div>
-        <div class="formBody__date">
+        <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
-            <input type="date" name="date" id="partial__date" required>
-        </div>
-        <div class="formBody__time">
-            <h2>Planned time:</h2>
-            <input type="time" name="time" id="partial__time" min="09:00" max="18:00" required>
+            <div>
+                <input type="checkbox" id="partial__less7" name="less7">
+                <label for="partial__less7">up to 7 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__less14" name="less14">
+                <label for="partial__less14">up to 14 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__less30" name="less30">
+                <label for="partial__less30">up to 30 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="partial__more30" name="more30">
+                <label for="partial__more30">more than 30 days</label>
+            </div>
         </div>
         <div class="formBody__budget">
             <h2>Planned budget:</h2>
@@ -174,7 +196,7 @@
         </div>
         <div class="formBody__text">
             <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="text" placeholder="Phone number*" name="phone" id="partial__phone">
+            <input type="number" placeholder="Phone number*" name="phone" id="partial__phone">
             <input type="text" placeholder="Full address & post code*" name="address" id="partial__address">
             <input type="email" placeholder="Your e-mail" name="email" id="partial__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
@@ -182,7 +204,7 @@
         <input type="submit" value="Send">
     </form>
     <form method="post" action="#" class="form__body formBody maintenance js_displaynone">
-        <div class="formBody__work">
+        <div class="formBody__work formBody__checkbox">
             <h2>Types of work:</h2>
             <div>
                 <input type="checkbox" id="maintenance__carpenter" name="carpenter">
@@ -221,17 +243,47 @@
             <h2>Attach a photo:</h2>
             <input type="file" name="time" id="maintenance__photo" placeholder="Photo">
         </div>
-        <div class="formBody__date">
+        <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
-            <input type="date" name="date" id="maintenance__date" required>
+            <div>
+                <input type="checkbox" id="maintenance__less7" name="less7">
+                <label for="maintenance__less7">up to 7 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__less14" name="less14">
+                <label for="maintenance__less14">up to 14 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__less30" name="less30">
+                <label for="maintenance__less30">up to 30 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__less45" name="less45">
+                <label for="maintenance__less45">up to 45 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__less60" name="less60">
+                <label for="maintenance__less60">up to 60 days</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__more60" name="more60">
+                <label for="maintenance__more60">more than 60 days</label>
+            </div>
         </div>
-        <div class="formBody__time">
+        <div class="formBody__time formBody__checkbox">
             <h2>Planned time:</h2>
-            <input type="time" name="time" id="maintenance__time" min="09:00" max="18:00" required>
+            <div>
+                <input type="checkbox" id="maintenance__am" name="am">
+                <label for="maintenance__am">up to 12 am</label>
+            </div>
+            <div>
+                <input type="checkbox" id="maintenance__pm" name="pm">
+                <label for="maintenance__pm">after 12 pm</label>
+            </div>
         </div>
         <div class="formBody__text">
             <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="text" placeholder="Phone number*" name="phone" id="maintenance__phone">
+            <input type="number" placeholder="Phone number*" name="phone" id="maintenance__phone">
             <input type="text" placeholder="Full address & post code*" name="address" id="maintenance__address">
             <input type="email" placeholder="Your e-mail" name="email" id="maintenance__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
@@ -289,52 +341,56 @@
             }
         }
     }
-    formPages();
-    window.addEventListener('popstate', formPages);
-    let jsRangeLabelDom = document.querySelectorAll(".js_rangeLabel");
-    if(jsRangeLabelDom.length) {
-        jsRangeLabelDom.forEach(function (label) {
-            let input = label.nextElementSibling;
-            if(input.tagName === "INPUT") {
-                input.addEventListener("input", function (e) {
-                    let span = label.getElementsByTagName("span");
-                    if(span.length)
-                        span[0].innerText = input.value;
-                    else
-                        label.innerText = input.value;
-                });
-            }
-        });
-    }
-    let partialRooms = document.querySelectorAll(".formBody__rooms>div>input");
-    if(partialRooms.length) {
-        partialRooms.forEach(function (room) {
-            room.addEventListener("input", function (e) {
-                switch (room.name) {
-                    case "bathroom":
-                        document.querySelector(".bathroomSize").classList.toggle("js_displaynone");
-                        break;
-                    case "bedroom":
-                        document.querySelector(".bedroomSize").classList.toggle("js_displaynone");
-                        break;
-                    case "hallway":
-                        document.querySelector(".hallwaySize").classList.toggle("js_displaynone");
-                        break;
-                    case "kitchen":
-                        document.querySelector(".kitchenSize").classList.toggle("js_displaynone");
-                        break;
-                    case "kidsroom":
-                        document.querySelector(".kidsroomSize").classList.toggle("js_displaynone");
-                        break;
-                    case "livingroom":
-                        document.querySelector(".livingroomSize").classList.toggle("js_displaynone");
-                        break;
-                    case "stairs":
-                        document.querySelector(".stairsSize").classList.toggle("js_displaynone");
-                        break;
+    document.addEventListener("DOMContentLoaded", function () {
+        formPages();
+        window.addEventListener('popstate', formPages);
+
+        let jsRangeLabelDom = document.querySelectorAll(".js_rangeLabel");
+        if(jsRangeLabelDom.length) {
+            jsRangeLabelDom.forEach(function (label) {
+                let input = label.nextElementSibling;
+                if(input.tagName === "INPUT") {
+                    input.addEventListener("input", function (e) {
+                        let span = label.getElementsByTagName("span");
+                        if(span.length)
+                            span[0].innerText = input.value;
+                        else
+                            label.innerText = input.value;
+                    });
                 }
             });
-        });
-    }
+        }
+
+        let partialRooms = document.querySelectorAll(".formBody__rooms>div>input");
+        if(partialRooms.length) {
+            partialRooms.forEach(function (room) {
+                room.addEventListener("input", function (e) {
+                    switch (room.name) {
+                        case "bathroom":
+                            document.querySelector(".bathroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "bedroom":
+                            document.querySelector(".bedroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "hallway":
+                            document.querySelector(".hallwaySize").classList.toggle("js_displaynone");
+                            break;
+                        case "kitchen":
+                            document.querySelector(".kitchenSize").classList.toggle("js_displaynone");
+                            break;
+                        case "kidsroom":
+                            document.querySelector(".kidsroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "livingroom":
+                            document.querySelector(".livingroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "stairs":
+                            document.querySelector(".stairsSize").classList.toggle("js_displaynone");
+                            break;
+                    }
+                });
+            });
+        }
+    });
 </script>
 

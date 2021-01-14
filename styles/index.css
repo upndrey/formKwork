@@ -100,15 +100,48 @@ body {
       @media screen and (max-width: 480px) {
         .form .formBody__size input {
           width: 100%; } }
-  .form .formBody__materials > div {
-    display: inline-block;
-    margin-bottom: 10px; }
-  .form .formBody__rooms > div {
-    display: inline-block;
-    margin-bottom: 10px; }
-  .form .formBody__work > div {
-    display: inline-block;
-    margin-bottom: 10px; }
+  .form .formBody__checkbox {
+    display: flex;
+    flex-wrap: wrap; }
+    .form .formBody__checkbox h2 {
+      width: 100%;
+      flex-grow: 1; }
+    .form .formBody__checkbox > div {
+      display: inline-block;
+      margin-bottom: 15px;
+      margin-right: 15px; }
+    .form .formBody__checkbox label {
+      padding: 5px 10px;
+      background: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+      position: relative;
+      right: 2px;
+      bottom: 2px;
+      border-radius: 3px;
+      box-shadow: 1px 1px 1px 5px #000; }
+      .form .formBody__checkbox label:hover {
+        background: #000;
+        border: 1px solid #000;
+        color: #fff;
+        box-shadow: inset 1px 0 5px #000; }
+    .form .formBody__checkbox input {
+      display: none; }
+    .form .formBody__checkbox input:checked + label {
+      background: #000;
+      border: 1px solid #000;
+      color: #fff;
+      box-shadow: none;
+      bottom: 0;
+      right: 0; }
+    .form .formBody__checkbox input:not(:checked) + label {
+      background: #fff;
+      border: 1px solid #000;
+      color: #000;
+      right: 2px;
+      bottom: 2px;
+      box-shadow: 2px 2px 4px 0px #000; }
   .form .formBody__budget {
     display: flex;
     align-items: center;
@@ -167,18 +200,6 @@ body {
     border: 1px solid #000;
     border-radius: 2px;
     padding: 10px 15px; }
-  .form input[type='file'],
-  .form .formBody__date > input,
-  .form input[type='time'] {
-    background-color: transparent;
-    width: 300px;
-    box-sizing: border-box;
-    max-width: 100%; }
-    @media screen and (max-width: 480px) {
-      .form input[type='file'],
-      .form .formBody__date > input,
-      .form input[type='time'] {
-        width: 100%; } }
   .form textarea {
     resize: none; }
   .form input[type='submit'] {
