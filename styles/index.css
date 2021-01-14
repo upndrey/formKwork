@@ -195,6 +195,7 @@ body {
   .form input[type='email'],
   .form input[type='date'],
   .form input[type='time'],
+  .form input[type='number'],
   .form input[type='file'],
   .form textarea {
     border: 1px solid #000;
