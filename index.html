@@ -75,10 +75,16 @@
             <label for="fullhouse__budget" class="js_rangeLabel">£<span>20000</span></label>
             <input type="range" id="fullhouse__budget" name="rooms" value="20000" min="20000" step="1000" max="350000">
         </div>
+        <div class="formBody__checkbox">
+            <div>
+                <input type="checkbox" id="fullhouse__noBudget" name="noBudget">
+                <label for="fullhouse__noBudget">the budget has not yet been decided</label>
+            </div>
+        </div>
         <div class="formBody__text">
-            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="number" placeholder="Phone number*" name="phone" id="fullhouse__phone">
-            <input type="text" placeholder="Full address & post code*" name="address" id="fullhouse__address">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="number" placeholder="Phone number*" name="phone" id="fullhouse__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="fullhouse__address" required>
             <input type="email" placeholder="Your e-mail" name="email" id="fullhouse__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
@@ -194,10 +200,16 @@
             <label for="partial__budget" class="js_rangeLabel">£<span>20000</span></label>
             <input type="range" id="partial__budget" name="rooms" value="20000" min="20000" step="1000" max="350000">
         </div>
+        <div class="formBody__checkbox">
+            <div>
+                <input type="checkbox" id="partial__noBudget" name="noBudget">
+                <label for="partial__noBudget">the budget has not yet been decided</label>
+            </div>
+        </div>
         <div class="formBody__text">
-            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="number" placeholder="Phone number*" name="phone" id="partial__phone">
-            <input type="text" placeholder="Full address & post code*" name="address" id="partial__address">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="number" placeholder="Phone number*" name="phone" id="partial__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="partial__address" required>
             <input type="email" placeholder="Your e-mail" name="email" id="partial__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
@@ -282,9 +294,9 @@
             </div>
         </div>
         <div class="formBody__text">
-            <input type="text" placeholder="Your name*" name="firstname" class="firstname">
-            <input type="number" placeholder="Phone number*" name="phone" id="maintenance__phone">
-            <input type="text" placeholder="Full address & post code*" name="address" id="maintenance__address">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="number" placeholder="Phone number*" name="phone" id="maintenance__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="maintenance__address" required>
             <input type="email" placeholder="Your e-mail" name="email" id="maintenance__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
