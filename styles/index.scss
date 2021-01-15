@@ -83,7 +83,7 @@ body {
     box-sizing: border-box;
     margin: 0;
     padding: 25px;
-    border: 1px solid #000;
+    box-shadow: 0 0 7px 0 #000;
 
     &>div {
       position: relative;
