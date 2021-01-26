@@ -1,3 +1,550 @@
+<?php
+    function send_mail($mail_to, $thema, $html, $path){
+        if ($path) {
+            $fp = fopen($path,"rb");
+            if (!$fp)
+            {
+                exit();
+            }
+            $file = fread($fp, filesize($path));
+            fclose($fp);
+        }
+        $name = "file.jpg"; // в этой переменной надо сформировать имя файла (без всякого пути)
+        $EOL = "\r\n"; // ограничитель строк, некоторые почтовые сервера требуют \n - подобрать опытным путём
+        $boundary     = "--".md5(uniqid(time()));  // любая строка, которой не будет ниже в потоке данных.
+        $headers    = "MIME-Version: 1.0;$EOL";
+        $headers   .= "Content-Type: multipart/mixed; boundary=\"$boundary\"$EOL";
+        $headers   .= "From: cusot.com";
+
+        $multipart  = "--$boundary$EOL";
+        $multipart .= "Content-Type: text/html; charset=utf-8$EOL";
+        $multipart .= "Content-Transfer-Encoding: base64$EOL";
+        $multipart .= $EOL; // раздел между заголовками и телом html-части
+        $multipart .= chunk_split(base64_encode($html));
+
+        $multipart .=  "$EOL--$boundary$EOL";
+        $multipart .= "Content-Type: application/octet-stream; name=\"$name\"$EOL";
+        $multipart .= "Content-Transfer-Encoding: base64$EOL";
+        $multipart .= "Content-Disposition: attachment; filename=\"$name\"$EOL";
+        $multipart .= $EOL; // раздел между заголовками и телом прикрепленного файла
+        $multipart .= chunk_split(base64_encode($file));
+
+        $multipart .= "$EOL--$boundary--$EOL";
+
+        if(!mail($mail_to, $thema, $multipart, $headers))
+        {return False;           //если не письмо не отправлено
+        }
+        else { //// если письмо отправлено
+            return True;
+        }
+    }
+    if(isset($_POST['fullhouse__send'])) {
+        $message = "";
+        $messageTg = "";
+        $roomsCount = null;
+        if(isset($_POST['rooms'])){
+            $roomsCount = $_POST['rooms'];
+            $message .= "<h2>Total number of rooms:</h2>";
+            $messageTg .= "Total number of rooms:\n";
+            $message .= "<p>${roomsCount}</p>";
+            $messageTg .= "${roomsCount}\n\n";
+        }
+
+        $roomsSize = null;
+        if(isset($_POST['size'])){
+            $roomsSize = $_POST['size'];
+            $message .= "<h2>Size:</h2>";
+            $messageTg .= "Size:\n";
+            $message .= "<p>${roomsSize}М2</p>";
+            $messageTg .= "${roomsSize}М2\n\n";
+        }
+
+        $message .= "<h2>Materials:</h2>";
+        $messageTg .= "Materials:\n";
+        $message .= "<p>";
+        if(isset($_POST['laminate'])) {
+            $message .= "laminate; ";
+            $messageTg .= "laminate; ";
+        }
+        if(isset($_POST['parquet'])) {
+            $message .= "parquet; ";
+            $messageTg .= "parquet; ";
+        }
+        if(isset($_POST['naturalwood'])) {
+            $message .= "natural wood; ";
+            $messageTg .= "natural wood; ";
+        }
+        if(isset($_POST['tiled'])) {
+            $message .= "tiled; ";
+            $messageTg .= "tiled; ";
+        }
+        if(isset($_POST['naturalstone'])) {
+            $message .= "natural stone; ";
+            $messageTg .= "natural stone; ";
+        }
+        if(isset($_POST['venetianplaster'])) {
+            $message .= "venetian plaster; ";
+            $messageTg .= "venetian plaster; ";
+        }
+        if(isset($_POST['artisticplaster'])) {
+            $message .= "artistic plaster; ";
+            $messageTg .= "artistic plaster; ";
+        }
+        if(isset($_POST['marble'])) {
+            $message .= "marble; ";
+            $messageTg .= "marble; ";
+        }
+        $message .= "</p>";
+        $messageTg .= "\n\n";
+
+        $days = null;
+        if(isset($_POST['days'])) {
+            $days = $_POST['days'];
+            $message .= "<h2>When do you plan to start renovation?</h2>";
+            $messageTg .= "When do you plan to start renovation?\n";
+            $message .= "<p>${days}</p>";
+            $messageTg .= "${days}\n\n";
+        }
+
+        $budget = null;
+        if(isset($_POST['noBudget'])) {
+            $budget = "the budget has not yet been decided";
+            $message .= "<h2>Planned budget:</h2>";
+            $messageTg .= "Planned budget:\n";
+            $message .= "<p>${budget}</p>";
+            $messageTg .= "${budget}\n\n";
+        }
+        else {
+            $budget = $_POST['budget'];
+            $message .= "<h2>Planned budget:</h2>";
+            $messageTg .= "Planned budget:\n";
+            $message .= "<p>${budget}</p>";
+            $messageTg .= "${budget}\n\n";
+        }
+
+        $firstname = $_POST['firstname'];
+        $message .= "<h2>Name:</h2>";
+        $messageTg .= "Name:\n";
+        $message .= "<p>${firstname}</p>";
+        $messageTg .= "${firstname}\n\n";
+
+        $phone = $_POST['phone'];
+        $message .= "<h2>Phone number:</h2>";
+        $messageTg .= "Phone number:\n";
+        $message .= "<p>${phone}</p>";
+        $messageTg .= "${phone}\n\n";
+
+        $address = $_POST['address'];
+        $message .= "<h2>Address:</h2>";
+        $messageTg .= "Address:\n";
+        $message .= "<p>${address}</p>";
+        $messageTg .= "${address}\n\n";
+
+        $email = null;
+        if(isset($_POST['email'])) {
+            $email = $_POST['email'];
+            $message .= "<h2>Email:</h2>";
+            $messageTg .= "Email:\n";
+            $message .= "<p>${email}</p>";
+            $messageTg .= "${email}\n\n";
+        }
+        $comment = null;
+        if(isset($_POST['comments'])) {
+            $comment = $_POST['comments'];
+            $message .= "<h2>Comments: </h2>";
+            $messageTg .= "Comments:\n";
+            $message .= "<p>${comment}</p>";
+            $messageTg .= "${comment}\n\n";
+        }
+
+
+        $subject = "Quote.";
+
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: cusot.com\r\n";
+        $headers .= "Reply-To: reply-to@example.com\r\n";
+
+        // сюда нужно вписать токен вашего бота
+        define('TELEGRAM_TOKEN', '1598668541:AAEgUhl3UUr0nJS6h5F_H3MkirVa8iiqsgE');
+        // сюда нужно вписать ваш внутренний айдишник
+        define('TELEGRAM_CHATID', '-1001188194749');
+
+        function message_to_telegram($text)
+        {
+            $ch = curl_init();
+            curl_setopt_array(
+                $ch,
+                array(
+                    CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
+                    CURLOPT_POST => TRUE,
+                    CURLOPT_RETURNTRANSFER => TRUE,
+                    CURLOPT_TIMEOUT => 10,
+                    CURLOPT_POSTFIELDS => array(
+                        'chat_id' => TELEGRAM_CHATID,
+                        'text' => $text,
+                    ),
+                )
+            );
+            curl_exec($ch);
+        }
+        message_to_telegram($messageTg);
+
+        mail("upndrey@yandex.ru", $subject, $message, $headers);
+        header('Location: https://cusot.com/thanks/');
+    }
+
+    if(isset($_POST['partial__send'])) {
+        $messageTg = "";
+        $message = "";
+        $message .= "<h2>Selected rooms:</h2>";
+        $messageTg .= "Selected rooms:\n";
+
+        $message .= "<p>";
+        if(isset($_POST['bathroom'])) {
+            $message .= "bathroom";
+            $message .= "bathroom";
+            $temp = $_POST['bathroomSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['bedroom'])) {
+            $message .= "bedroom";
+            $message .= "bedroom";
+            $temp = $_POST['bedroomSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['hallway'])) {
+            $message .= "hallway";
+            $message .= "hallway";
+            $temp = $_POST['hallwaySize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['kitchen'])) {
+            $message .= "kitchen";
+            $message .= "kitchen";
+            $temp = $_POST['kitchenSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['livingroom'])) {
+            $message .= "living room";
+            $message .= "living room";
+            $temp = $_POST['livingroomSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['stairs'])) {
+            $message .= "stairs";
+            $message .= "living room";
+            $temp = $_POST['stairsSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['extension'])) {
+            $message .= "extension";
+            $message .= "living room";
+            $temp = $_POST['extensionSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['loft'])) {
+            $message .= "loft";
+            $message .= "living room";
+            $temp = $_POST['loftSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        if(isset($_POST['garage'])) {
+            $message .= "Garage";
+            $message .= "living room";
+            $temp = $_POST['garageSize'];
+            $message .= "(${temp}); ";
+            $messageTg .= "(${temp}); ";
+        }
+        $message .= "</p>";
+        $messageTg .= "\n\n";
+
+        $materials = [];
+        $message .= "<h2>Materials:</h2>";
+        $messageTg .= "Materials:\n";
+
+        $message .= "<p>";
+        if(isset($_POST['laminate'])) {
+            $message .= "laminate; ";
+            $messageTg .= "laminate; ";
+        }
+        if(isset($_POST['parquet'])) {
+            $message .= "parquet; ";
+            $messageTg .= "parquet; ";
+        }
+        if(isset($_POST['naturalwood'])) {
+            $message .= "natural wood; ";
+            $messageTg .= "natural wood; ";
+        }
+        if(isset($_POST['tiled'])) {
+            $message .= "tiled; ";
+            $messageTg .= "tiled; ";
+        }
+        if(isset($_POST['naturalstone'])) {
+            $message .= "natural stone; ";
+            $messageTg .= "natural stone; ";
+        }
+        if(isset($_POST['venetianplaster'])) {
+            $message .= "venetian plaster; ";
+            $messageTg .= "venetian plaster; ";
+        }
+        if(isset($_POST['artisticplaster'])) {
+            $message .= "artistic plaster; ";
+            $messageTg .= "artistic plaster; ";
+        }
+        if(isset($_POST['marble'])) {
+            $message .= "marble; ";
+            $messageTg .= "marble; ";
+        }
+        $message .= "</p>";
+        $messageTg .= "\n\n";
+
+        $days = null;
+        if(isset($_POST['days'])) {
+            $days = $_POST['days'];
+            $message .= "<h2>When do you plan to start renovation?</h2>";
+            $messageTg .= "When do you plan to start renovation?\n";
+            $message .= "<p>${days}</p>";
+            $messageTg .= "${days}\n\n";
+        }
+
+        $budget = null;
+        if(isset($_POST['noBudget'])) {
+            $budget = "the budget has not yet been decided";
+            $message .= "<h2>Planned budget:</h2>";
+            $messageTg .= "Planned budget:\n";
+            $message .= "<p>${budget}</p>";
+            $messageTg .= "${budget}\n\n";
+        }
+        else {
+            $budget = $_POST['budget'];
+            $message .= "<h2>Planned budget:</h2>";
+            $messageTg .= "Planned budget:\n";
+            $message .= "<p>${budget}</p>";
+            $messageTg .= "${budget}\n\n";
+        }
+
+        $firstname = $_POST['firstname'];
+        $message .= "<h2>Name:</h2>";
+        $messageTg .= "Name:\n";
+        $message .= "<p>${firstname}</p>";
+        $messageTg .= "${firstname}\n\n";
+
+        $phone = $_POST['phone'];
+        $message .= "<h2>Phone number:</h2>";
+        $messageTg .= "Phone number:\n";
+        $message .= "<p>${phone}</p>";
+        $messageTg .= "${phone}\n\n";
+
+        $address = $_POST['address'];
+        $message .= "<h2>Address:</h2>";
+        $messageTg .= "Address:\n";
+        $message .= "<p>${address}</p>";
+        $messageTg .= "${address}\n\n";
+
+        $email = null;
+        if(isset($_POST['email'])) {
+            $email = $_POST['email'];
+            $message .= "<h2>Email:</h2>";
+            $messageTg .= "Email:\n";
+            $message .= "<p>${email}</p>";
+            $messageTg .= "${email}\n\n";
+        }
+        $comment = null;
+        if(isset($_POST['comments'])) {
+            $comment = $_POST['comments'];
+            $message .= "<h2>Comments: </h2>";
+            $messageTg .= "Comments:\n";
+            $message .= "<p>${comment}</p>";
+            $messageTg .= "${comment}\n\n";
+        }
+
+
+        $subject = "Quote.";
+
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: cusot.com\r\n";
+        $headers .= "Reply-To: reply-to@example.com\r\n";
+
+
+        // сюда нужно вписать токен вашего бота
+        define('TELEGRAM_TOKEN', '1598668541:AAEgUhl3UUr0nJS6h5F_H3MkirVa8iiqsgE');
+        // сюда нужно вписать ваш внутренний айдишник
+        define('TELEGRAM_CHATID', '1018524645');
+
+        function message_to_telegram($text)
+        {
+            $ch = curl_init();
+            curl_setopt_array(
+                $ch,
+                array(
+                    CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
+                    CURLOPT_POST => TRUE,
+                    CURLOPT_RETURNTRANSFER => TRUE,
+                    CURLOPT_TIMEOUT => 10,
+                    CURLOPT_POSTFIELDS => array(
+                        'chat_id' => TELEGRAM_CHATID,
+                        'text' => $text,
+                    ),
+                )
+            );
+            curl_exec($ch);
+        }
+        message_to_telegram($messageTg);
+
+
+        mail("upndrey@yandex.ru", $subject, $message, $headers);
+        header('Location: https://cusot.com/thanks/');
+    }
+
+    if(isset($_POST['maintenance__send'])) {
+        $message = "";
+        $messageTg = "";
+
+        $message .= "<h2>Types of work:</h2>";
+        $messageTg .= "Types of work:\n";
+        $message .= "<p>";
+        if(isset($_POST['carpenter'])) {
+            $message .= "carpenter; ";
+            $messageTg .= "carpenter; ";
+        }
+        if(isset($_POST['electrical'])) {
+            $message .= "electrical; ";
+            $messageTg .= "electrical; ";
+        }
+        if(isset($_POST['gas'])) {
+            $message .= "gas; ";
+            $messageTg .= "gas; ";
+        }
+        if(isset($_POST['gardener'])) {
+            $message .= "gardener; ";
+            $messageTg .= "gardener; ";
+        }
+        if(isset($_POST['generalbuilder'])) {
+            $message .= "general builder; ";
+            $messageTg .= "general builder; ";
+        }
+        if(isset($_POST['groutworker'])) {
+            $message .= "grout worker; ";
+            $messageTg .= "grout worker; ";
+        }
+        if(isset($_POST['painter'])) {
+            $message .= "painter; ";
+            $messageTg .= "painter; ";
+        }
+        if(isset($_POST['plumber'])) {
+            $message .= "plumber; ";
+            $messageTg .= "plumber; ";
+        }
+        $message .= "</p>";
+        $messageTg .= "\n\n";
+
+        $date = null;
+        if(isset($_POST['date'])) {
+            $date = $_POST['date'];
+            $message .= "<h2>When do you plan to start renovation?</h2>";
+            $messageTg .= "When do you plan to start renovation?\n";
+            $message .= "<p>${date}</p>";
+            $messageTg .= "${date}\n\n";
+        }
+
+        $time = null;
+        if(isset($_POST['time'])) {
+            $time = $_POST['time'];
+            $message .= "<h2>Planned time:</h2>";
+            $messageTg .= "Planned time:\n";
+            $message .= "<p>${time}</p>";
+            $messageTg .= "${time}\n\n";
+        }
+
+        $firstname = $_POST['firstname'];
+        $message .= "<h2>Name:</h2>";
+        $messageTg .= "Name:\n";
+        $message .= "<p>${firstname}</p>";
+        $messageTg .= "${firstname}\n\n";
+
+        $phone = $_POST['phone'];
+        $message .= "<h2>Phone number:</h2>";
+        $messageTg .= "Phone number:\n";
+        $message .= "<p>${phone}</p>";
+        $messageTg .= "${phone}\n\n";
+
+        $address = $_POST['address'];
+        $message .= "<h2>Address:</h2>";
+        $messageTg .= "Address:\n";
+        $message .= "<p>${address}</p>";
+        $messageTg .= "${address}\n\n";
+
+
+        $email = null;
+        if(isset($_POST['email'])) {
+            $email = $_POST['email'];
+            $message .= "<h2>Email:</h2>";
+            $messageTg .= "Email:\n";
+            $message .= "<p>${email}</p>";
+            $messageTg .= "${email}\n\n";
+        }
+        $comment = null;
+        if(isset($_POST['comments'])) {
+            $comment = $_POST['comments'];
+            $message .= "<h2>Comments: </h2>";
+            $messageTg .= "Comments:\n";
+            $message .= "<p>${comment}</p>";
+            $messageTg .= "${comment}\n\n";
+        }
+
+        $picture = "";
+        if (!empty($_FILES['photo']['tmp_name']))
+        {
+            // Закачиваем файл
+            $path = $_FILES['photo']['name'];
+            if (copy($_FILES['photo']['tmp_name'], $path)) $picture = $path;
+        }
+
+
+        $subject = "Quote.";
+        $headers  = "Content-type: text/html; charset=utf-8 \r\n";
+        $headers .= "From: cusot.com\r\n";
+        $headers .= "Reply-To: reply-to@example.com\r\n";
+
+
+        // сюда нужно вписать токен вашего бота
+        define('TELEGRAM_TOKEN', '1598668541:AAEgUhl3UUr0nJS6h5F_H3MkirVa8iiqsgE');
+        // сюда нужно вписать ваш внутренний айдишник
+        define('TELEGRAM_CHATID', '1018524645');
+
+        function message_to_telegram($text)
+        {
+            $ch = curl_init();
+            curl_setopt_array(
+                $ch,
+                array(
+                    CURLOPT_URL => 'https://api.telegram.org/bot' . TELEGRAM_TOKEN . '/sendMessage',
+                    CURLOPT_POST => TRUE,
+                    CURLOPT_RETURNTRANSFER => TRUE,
+                    CURLOPT_TIMEOUT => 10,
+                    CURLOPT_POSTFIELDS => array(
+                        'chat_id' => TELEGRAM_CHATID,
+                        'text' => $text,
+                    ),
+                )
+            );
+            curl_exec($ch);
+        }
+        message_to_telegram($messageTg);
+
+        if(empty($picture)) mail("upndrey@yandex.ru", $subject, $message, $headers);
+        else send_mail("upndrey@yandex.ru", $subject, $message, $picture);
+        header('Location: https://cusot.com/thanks/');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -14,8 +561,8 @@
 <div class="form">
     <div class="form__header">
         <a href="#fullhouse" class="fullhouseLink">Full House</a>
-        <a href="#partial" class="partialLink">Partial</a>
-        <a href="#maintenance" class="maintenanceLink js_form__active">Maintenance</a>
+        <a href="#partial" class="partialLink js_form__active">Partial</a>
+        <a href="#maintenance" class="maintenanceLink">Maintenance</a>
     </div>
     <form method="post" action="https://cusot.com/thanks/" class="form__body fullhouse">
         <div class="formBody__roomsCount">
@@ -476,3 +1023,5 @@
 </script>
 </body>
 </html>
+
+

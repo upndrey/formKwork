@@ -4,20 +4,15 @@
   font-size: 20px;
   min-width: 320px;
   max-width: 768px;
-  margin: auto;
+  margin: 50px auto;
   display: flex;
   flex-direction: column;
   position: relative;
   font-weight: 300; }
-  .form p {
-    font-size: 16px;
-    text-align: center; }
-  .form input[type='range'] {
-    width: auto;
-    position: relative;
-    bottom: 6px; }
   .form .displaynone {
     display: none; }
+  .form input[type='range'] {
+    width: auto; }
   @media screen and (max-width: 1220px) {
     .form {
       max-width: 768px; } }
@@ -216,6 +211,162 @@
     flex-direction: column; }
     .form .formBody__text > * {
       margin-bottom: 10px; }
+  .form .Mobile_formBody__roomsCount {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .Mobile_formBody__roomsCount h2 {
+      margin-right: 5px;
+      margin-bottom: 10px; }
+    .form .Mobile_formBody__roomsCount label {
+      width: 20px;
+      margin-right: 10px; }
+    .form .Mobile_formBody__roomsCount input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .Mobile_formBody__roomsCount input {
+          width: 100%; } }
+  .form .Mobile_formBody__size {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .Mobile_formBody__size h2 {
+      margin-right: 5px;
+      margin-bottom: 10px; }
+    .form .Mobile_formBody__size label {
+      width: 60px;
+      margin-right: 10px; }
+    .form .Mobile_formBody__size input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .Mobile_formBody__size input {
+          width: 100%; } }
+  .form .Mobile_formBody__materials > div {
+    width: 160px; }
+  .form .Mobile_formBody__rooms > div {
+    width: 125px; }
+    @media screen and (max-width: 480px) {
+      .form .Mobile_formBody__rooms > div {
+        width: 100%; } }
+  .form .Mobile_formBody__work > div {
+    width: 160px; }
+  .form .Mobile_formBody__time > div {
+    width: 160px; }
+  .form .Mobile_formBody__date > div {
+    width: 225px; }
+    @media screen and (max-width: 768px) {
+      .form .Mobile_formBody__date > div {
+        width: 180px; } }
+  .form .Mobile_formBody__checkbox {
+    display: flex;
+    flex-wrap: wrap; }
+    @media screen and (max-width: 768px) {
+      .form .Mobile_formBody__checkbox {
+        justify-content: center; } }
+    .form .Mobile_formBody__checkbox h2 {
+      width: 100%;
+      margin-bottom: 10px;
+      flex-grow: 1; }
+    .form .Mobile_formBody__checkbox > div {
+      display: inline-block;
+      margin-bottom: 15px;
+      margin-right: 15px; }
+    .form .Mobile_formBody__checkbox label {
+      width: 100%;
+      text-align: center;
+      box-sizing: border-box;
+      padding: 5px 10px;
+      background: #fff;
+      border: 1px solid #000;
+      cursor: pointer;
+      transition: .3s ease-in-out;
+      position: relative;
+      right: 2px;
+      bottom: 2px;
+      box-shadow: 1px 1px 1px 5px #000; }
+      .form .Mobile_formBody__checkbox label:hover {
+        background: #000;
+        border: 1px solid #000;
+        color: #fff;
+        box-shadow: inset 1px 0 5px #000; }
+    .form .Mobile_formBody__checkbox input {
+      display: none; }
+    .form .Mobile_formBody__checkbox input:checked + label {
+      background: #000;
+      border: 1px solid #000;
+      color: #fff;
+      box-shadow: none;
+      bottom: 0;
+      right: 0; }
+    .form .Mobile_formBody__checkbox input:not(:checked) + label {
+      background: #fff;
+      border: 1px solid #000;
+      color: #000;
+      right: 2px;
+      bottom: 2px;
+      box-shadow: 2px 2px 4px 0px #000; }
+    @media screen and (max-width: 480px) {
+      .form .Mobile_formBody__checkbox {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center; }
+        .form .Mobile_formBody__checkbox > div {
+          width: 100%;
+          margin-bottom: 15px;
+          margin-right: 0; } }
+  .form .Mobile_formBody__budget {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .Mobile_formBody__budget h2 {
+      margin-right: 5px; }
+    .form .Mobile_formBody__budget label {
+      width: 75px;
+      margin-right: 10px; }
+    .form .Mobile_formBody__budget input {
+      flex-grow: 1; }
+      @media screen and (max-width: 480px) {
+        .form .Mobile_formBody__budget input {
+          width: 100%; } }
+    .form .Mobile_formBody__budget.displaynone {
+      display: none; }
+  .form .Mobile_formBody__sizes > h2 {
+    margin-bottom: 5px;
+    margin-right: 5px; }
+  .form .Mobile_formBody__sizes > span {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 15px;
+    color: #333; }
+  .form .Mobile_formBody__sizes > div {
+    width: 100%;
+    margin-bottom: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap; }
+    .form .Mobile_formBody__sizes > div.js_displaynone {
+      display: none; }
+  .form .Mobile_formBody__sizes label {
+    width: 200px;
+    margin-right: 10px; }
+    @media screen and (max-width: 480px) {
+      .form .Mobile_formBody__sizes label {
+        width: auto; } }
+  .form .Mobile_formBody__sizes input {
+    width: auto;
+    flex-grow: 1; }
+    @media screen and (max-width: 480px) {
+      .form .Mobile_formBody__sizes input {
+        width: 100%; } }
+  .form .Mobile_formBody__text {
+    display: flex;
+    flex-direction: column; }
+    .form .Mobile_formBody__text > * {
+      margin-bottom: 10px; }
   .form h2 {
     font-size: 18px;
     font-weight: 600;
@@ -267,4 +418,4 @@
 
 /* /FORM */
 
-/*# sourceMappingURL=index.css.map */
+/*# sourceMappingURL=mobile.css.map */

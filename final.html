@@ -1,23 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=320,initial-scale=1,maximum-scale=1,user-scalable=no"/>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-    <meta name="HandheldFriendly" content="true"/>
-    <link rel="stylesheet" href="./styles/index.css">
-    <title>Form</title>
-</head>
-<body>
 <div class="form">
     <div class="form__header">
         <a href="#fullhouse" class="fullhouseLink">Full House</a>
-        <a href="#partial" class="partialLink">Partial</a>
-        <a href="#maintenance" class="maintenanceLink js_form__active">Maintenance</a>
+        <a href="#partial" class="partialLink js_form__active">Partial</a>
+        <a href="#maintenance" class="maintenanceLink">Maintenance</a>
     </div>
-    <form method="post" action="https://cusot.com/thanks/" class="form__body fullhouse">
+    <form action="#" method="post" class="form__body fullhouse">
         <div class="formBody__roomsCount">
             <h2>Total number of rooms:</h2>
             <label for="fullhouse__rooms" class="js_rangeLabel">2</label>
@@ -66,19 +53,19 @@
         <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
             <div>
-                <input type="radio" id="fullhouse__less7" name="days" value="up to 7 days">
+                <input type="radio" id="fullhouse__less7" name="days">
                 <label for="fullhouse__less7">up to 7 days</label>
             </div>
             <div>
-                <input type="radio" id="fullhouse__less14" name="days" value="up to 14 days">
+                <input type="radio" id="fullhouse__less14" name="days">
                 <label for="fullhouse__less14">up to 14 days</label>
             </div>
             <div>
-                <input type="radio" id="fullhouse__less30" name="days" value="up to 30 days">
+                <input type="radio" id="fullhouse__less30" name="days">
                 <label for="fullhouse__less30">up to 30 days</label>
             </div>
             <div>
-                <input type="radio" id="fullhouse__more30" name="days" value="more than 30 days<">
+                <input type="radio" id="fullhouse__more30" name="days">
                 <label for="fullhouse__more30">more than 30 days</label>
             </div>
         </div>
@@ -100,10 +87,9 @@
             <input type="email" placeholder="Your e-mail" name="email" id="fullhouse__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
-        <p>No spam, we promise. Your data will be processed according to our <a href="https://cusot.com/privacy-policy/">Privacy Policy</a>. You can unsubscribe at any time and we'll never share your details without your permission.</p>
-        <input type="submit" name="fullhouse__send" value="Get a quote">
+        <input type="submit" value="Get a quote">
     </form>
-    <form method="post" action="https://cusot.com/thanks/" class="form__body partial js_displaynone">
+    <form action="#" method="post" class="form__body partial js_displaynone">
         <div class="formBody__rooms formBody__checkbox">
             <h2>Select rooms:</h2>
             <div>
@@ -143,13 +129,12 @@
                 <label for="partial__loft">Loft</label>
             </div>
             <div>
-                <input type="checkbox" id="partial__garage" name="garage">
-                <label for="partial__garage">Garage</label>
+                <input type="checkbox" id="partial__garge" name="garge">
+                <label for="partial__garge">Garge</label>
             </div>
         </div>
         <div class="formBody__sizes">
-            <h2>Room sizes: </h2>
-            <span>Leave blank if you do not know the exact dimensions.</span>
+            <h2>Room sizes: </h2><span>Leave blank if you do not know the exact dimensions.</span>
 
             <div class="bathroomSize js_displaynone">
                 <label for="partial__bathroomSize" class="js_rangeLabel">Bathroom: <span>5</span> M²</label>
@@ -187,9 +172,9 @@
                 <label for="partial__loftSize" class="js_rangeLabel">Loft: <span>5</span> M²</label>
                 <input type="range" id="partial__loftSize" name="loftSize" value="5" min="5" max="100">
             </div>
-            <div class="garageSize js_displaynone">
-                <label for="partial__garageSize" class="js_rangeLabel">Garage: <span>5</span> M²</label>
-                <input type="range" id="partial__garageSize" name="garageSize" value="5" min="5" max="100">
+            <div class="gargeSize js_displaynone">
+                <label for="partial__gargeSize" class="js_rangeLabel">Garge: <span>5</span> M²</label>
+                <input type="range" id="partial__gargeSize" name="gargeSize" value="5" min="5" max="100">
             </div>
         </div>
         <div class="formBody__materials formBody__checkbox">
@@ -230,26 +215,26 @@
         <div class="formBody__date formBody__checkbox">
             <h2>When do you plan to start renovation?</h2>
             <div>
-                <input type="radio" id="partial__less7" name="days" value="up to 7 days">
+                <input type="radio" id="partial__less7" name="days">
                 <label for="partial__less7">up to 7 days</label>
             </div>
             <div>
-                <input type="radio" id="partial__less14" name="days" value="up to 14 days">
+                <input type="radio" id="partial__less14" name="days">
                 <label for="partial__less14">up to 14 days</label>
             </div>
             <div>
-                <input type="radio" id="partial__less30" name="days" value="up to 30 days">
+                <input type="radio" id="partial__less30" name="days">
                 <label for="partial__less30">up to 30 days</label>
             </div>
             <div>
-                <input type="radio" id="partial__more30" name="days" value="more than 30 days">
+                <input type="radio" id="partial__more30" name="days">
                 <label for="partial__more30">more than 30 days</label>
             </div>
         </div>
         <div class="formBody__budget">
             <h2>Planned budget:</h2>
             <label for="partial__budget" class="js_rangeLabel">£<span>1500</span></label>
-            <input type="range" id="partial__budget" name="budget" value="1500" min="1500" step="500" max="350000">
+            <input type="range" id="partial__budget" name="rooms" value="1500" min="1500" step="500" max="350000">
         </div>
         <div class="formBody__checkbox">
             <div>
@@ -264,10 +249,9 @@
             <input type="email" placeholder="Your e-mail" name="email" id="partial__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
-        <p>No spam, we promise. Your data will be processed according to our <a href="https://cusot.com/privacy-policy/">Privacy Policy</a>. You can unsubscribe at any time and we'll never share your details without your permission.</p>
-        <input type="submit" name="partial__send" value="Get a quote">
+        <input type="submit" value="Get a quote">
     </form>
-    <form method="post" action="https://cusot.com/thanks/" enctype="multipart/form-data" class="form__body formBody maintenance js_displaynone">
+    <form action="#" method="post" class="form__body formBody maintenance js_displaynone">
         <div class="formBody__work formBody__checkbox">
             <h2>Types of work:</h2>
             <div>
@@ -314,11 +298,11 @@
         <div class="formBody__time formBody__checkbox">
             <h2>Planned time:</h2>
             <div>
-                <input type="radio" id="maintenance__am" name="time" value="up to 12 am">
+                <input type="radio" id="maintenance__am" name="time">
                 <label for="maintenance__am">up to 12 am</label>
             </div>
             <div>
-                <input type="radio" id="maintenance__pm" name="time" value="after 12 pm">
+                <input type="radio" id="maintenance__pm" name="time">
                 <label for="maintenance__pm">after 12 pm</label>
             </div>
         </div>
@@ -329,8 +313,7 @@
             <input type="email" placeholder="Your e-mail" name="email" id="maintenance__email">
             <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
         </div>
-        <p>No spam, we promise. Your data will be processed according to our <a href="https://cusot.com/privacy-policy/">Privacy Policy</a>. You can unsubscribe at any time and we'll never share your details without your permission.</p>
-        <input type="submit" name="maintenance__send" value="Get a quote">
+        <input type="submit" value="Get a quote">
     </form>
 </div>
 <script>
@@ -450,8 +433,8 @@
                         case "loft":
                             document.querySelector(".loftSize").classList.toggle("js_displaynone");
                             break;
-                        case "garage":
-                            document.querySelector(".garageSize").classList.toggle("js_displaynone");
+                        case "garge":
+                            document.querySelector(".gargeSize").classList.toggle("js_displaynone");
                             break;
                     }
                 });
@@ -474,5 +457,3 @@
         }
     });
 </script>
-</body>
-</html>

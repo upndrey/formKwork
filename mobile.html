@@ -1,0 +1,442 @@
+<div class="form">
+    <div class="form__header">
+        <a href="#fullhouse" class="Mobile_fullhouseLink js_form__active">Full House</a>
+        <a href="#partial" class="Mobile_partialLink">Partial</a>
+        <a href="#maintenance" class="Mobile_maintenanceLink">Maintenance</a>
+    </div>
+    <form method="post" action="#" class="form__body Mobile_fullhouse">
+        <div class="formBody__roomsCount">
+            <h2>Total number of rooms:</h2>
+            <label for="Mobile_fullhouse__rooms" class="js_rangeLabel">2</label>
+            <input type="range" id="Mobile_fullhouse__rooms" name="rooms" value="2" min="2" max="15">
+        </div>
+        <div class="formBody__size">
+            <h2>Size:</h2>
+            <label for="Mobile_fullhouse__size" class="js_rangeLabel"><span>5</span> M²</label>
+            <input type="range" id="Mobile_fullhouse__size" name="size" value="5" min="5" max="500">
+        </div>
+        <div class="formBody__materials formBody__checkbox">
+            <h2>Preferred materials:</h2>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__laminate" name="laminate">
+                <label for="Mobile_fullhouse__laminate">Laminate</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__parquet" name="parquet">
+                <label for="Mobile_fullhouse__parquet">Parquet</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__naturalwood" name="naturalwood">
+                <label for="Mobile_fullhouse__naturalwood">Natural wood</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__tiled" name="tiled">
+                <label for="Mobile_fullhouse__tiled">Tiled</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__naturalstone" name="naturalstone">
+                <label for="Mobile_fullhouse__naturalstone">Natural stone</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__venetianplaster" name="venetianplaster">
+                <label for="Mobile_fullhouse__venetianplaster">Venetian Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__artisticplaster" name="artisticplaster">
+                <label for="Mobile_fullhouse__artisticplaster">Artistic Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__marble" name="marble">
+                <label for="Mobile_fullhouse__marble">Marble</label>
+            </div>
+        </div>
+        <div class="formBody__date formBody__checkbox">
+            <h2>When do you plan to start renovation?</h2>
+            <div>
+                <input type="radio" id="Mobile_fullhouse__less7" name="days">
+                <label for="Mobile_fullhouse__less7">up to 7 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_fullhouse__less14" name="days">
+                <label for="Mobile_fullhouse__less14">up to 14 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_fullhouse__less30" name="days">
+                <label for="Mobile_fullhouse__less30">up to 30 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_fullhouse__more30" name="days">
+                <label for="Mobile_fullhouse__more30">more than 30 days</label>
+            </div>
+        </div>
+        <div class="Mobile_formBody__budget">
+            <h2>Planned budget:</h2>
+            <label for="Mobile_fullhouse__budget" class="js_rangeLabel">£<span>20000</span></label>
+            <input type="range" id="Mobile_fullhouse__budget" name="budget" value="20000" min="20000" step="1000" max="350000">
+        </div>
+        <div class="formBody__checkbox">
+            <div>
+                <input type="checkbox" id="Mobile_fullhouse__noBudget" name="noBudget" class="Mobile_noBudget">
+                <label for="Mobile_fullhouse__noBudget">the budget has not yet been decided</label>
+            </div>
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="tel" placeholder="Phone number*" name="phone" id="Mobile_fullhouse__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="Mobile_fullhouse__address" required>
+            <input type="email" placeholder="Your e-mail" name="email" id="Mobile_fullhouse__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Get a quote">
+    </form>
+    <form method="post" action="#" class="form__body Mobile_partial js_displaynone">
+        <div class="Mobile_formBody__rooms formBody__checkbox">
+            <h2>Select rooms:</h2>
+            <div>
+                <input type="checkbox" id="Mobile_partial__bathroom" name="bathroom">
+                <label for="Mobile_partial__bathroom">Bathroom</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__bedroom" name="bedroom">
+                <label for="Mobile_partial__bedroom">Bedroom</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__hallway" name="hallway">
+                <label for="Mobile_partial__hallway">Hallway</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__kitchen" name="kitchen">
+                <label for="Mobile_partial__kitchen">Kitchen</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__kidsroom" name="kidsroom">
+                <label for="Mobile_partial__kidsroom">Kids room</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__livingroom" name="livingroom">
+                <label for="Mobile_partial__livingroom">Living room</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__stairs" name="stairs">
+                <label for="Mobile_partial__stairs">Stairs</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__extension" name="extension">
+                <label for="Mobile_partial__extension">Extension</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__loft" name="loft">
+                <label for="Mobile_partial__loft">Loft</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__garge" name="garge">
+                <label for="Mobile_partial__garge">Garge</label>
+            </div>
+        </div>
+        <div class="formBody__sizes">
+            <h2>Room sizes: </h2><span>Leave blank if you do not know the exact dimensions.</span>
+
+            <div class="Mobile_bathroomSize js_displaynone">
+                <label for="Mobile_partial__bathroomSize" class="js_rangeLabel">Bathroom: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__bathroomSize" name="bathroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_bedroomSize js_displaynone">
+                <label for="Mobile_partial__bedroomSize" class="js_rangeLabel">Bedroom: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__bedroomSize" name="bedroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_hallwaySize js_displaynone">
+                <label for="Mobile_partial__hallwaySize" class="js_rangeLabel">Hallway: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__hallwaySize" name="hallwaySize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_kitchenSize js_displaynone">
+                <label for="Mobile_partial__kitchenSize" class="js_rangeLabel">Kitchen: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__kitchenSize" name="kitchenSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_kidsroomSize js_displaynone">
+                <label for="Mobile_partial__kidsroomSize" class="js_rangeLabel">Kids room: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__kidsroomSize" name="kidsroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_livingroomSize js_displaynone">
+                <label for="Mobile_partial__livingroomSize" class="js_rangeLabel">Living room: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__livingroomSize" name="livingroomSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_stairsSize js_displaynone">
+                <label for="Mobile_partial__stairsSize" class="js_rangeLabel">Stairs: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__stairsSize" name="stairsSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_extensionSize js_displaynone">
+                <label for="Mobile_partial__extensionSize" class="js_rangeLabel">Extension: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__extensionSize" name="extensionSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_loftSize js_displaynone">
+                <label for="Mobile_partial__loftSize" class="js_rangeLabel">Loft: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__loftSize" name="loftSize" value="5" min="5" max="100">
+            </div>
+            <div class="Mobile_gargeSize js_displaynone">
+                <label for="Mobile_partial__gargeSize" class="js_rangeLabel">Garge: <span>5</span> M²</label>
+                <input type="range" id="Mobile_partial__gargeSize" name="gargeSize" value="5" min="5" max="100">
+            </div>
+        </div>
+        <div class="formBody__materials formBody__checkbox">
+            <h2>Preferred materials:</h2>
+            <div>
+                <input type="checkbox" id="Mobile_partial__laminate" name="laminate">
+                <label for="Mobile_partial__laminate">Laminate</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__parquet" name="parquet">
+                <label for="Mobile_partial__parquet">Parquet</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__naturalwood" name="naturalwood">
+                <label for="Mobile_partial__naturalwood">Natural wood</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__tiled" name="tiled">
+                <label for="Mobile_partial__tiled">Tiled</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__naturalstone" name="naturalstone">
+                <label for="Mobile_partial__naturalstone">Natural stone</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__venetianplaster" name="venetianplaster">
+                <label for="Mobile_partial__venetianplaster">Venetian Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__artisticplaster" name="artisticplaster">
+                <label for="Mobile_partial__artisticplaster">Artistic Plaster</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_partial__marble" name="marble">
+                <label for="Mobile_partial__marble">Marble</label>
+            </div>
+        </div>
+        <div class="formBody__date formBody__checkbox">
+            <h2>When do you plan to start renovation?</h2>
+            <div>
+                <input type="radio" id="Mobile_partial__less7" name="days">
+                <label for="Mobile_partial__less7">up to 7 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_partial__less14" name="days">
+                <label for="Mobile_partial__less14">up to 14 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_partial__less30" name="days">
+                <label for="Mobile_partial__less30">up to 30 days</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_partial__more30" name="days">
+                <label for="Mobile_partial__more30">more than 30 days</label>
+            </div>
+        </div>
+        <div class="Mobile_formBody__budget">
+            <h2>Planned budget:</h2>
+            <label for="Mobile_partial__budget" class="js_rangeLabel">£<span>1500</span></label>
+            <input type="range" id="Mobile_partial__budget" name="rooms" value="1500" min="1500" step="500" max="350000">
+        </div>
+        <div class="formBody__checkbox">
+            <div>
+                <input type="checkbox" id="Mobile_partial__noBudget" name="noBudget" class="Mobile_noBudget">
+                <label for="Mobile_partial__noBudget">the budget has not yet been decided</label>
+            </div>
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="tel" placeholder="Phone number*" name="phone" id="Mobile_partial__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="Mobile_partial__address" required>
+            <input type="email" placeholder="Your e-mail" name="email" id="Mobile_partial__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Get a quote">
+    </form>
+    <form method="post" action="#" class="form__body formBody Mobile_maintenance js_displaynone">
+        <div class="formBody__work formBody__checkbox">
+            <h2>Types of work:</h2>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__carpenter" name="carpenter">
+                <label for="Mobile_maintenance__carpenter">Carpenter</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__electrical" name="electrical">
+                <label for="Mobile_maintenance__electrical">Electrical</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__gas" name="gas">
+                <label for="Mobile_maintenance__gas">Gas</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__gardener" name="gardener">
+                <label for="Mobile_maintenance__gardener">Gardener</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__generalbuilder" name="generalbuilder">
+                <label for="Mobile_maintenance__generalbuilder">General builder</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__groutworker" name="groutworker">
+                <label for="Mobile_maintenance__groutworker">Grout worker</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__painter" name="painter">
+                <label for="Mobile_maintenance__painter">Painter</label>
+            </div>
+            <div>
+                <input type="checkbox" id="Mobile_maintenance__plumber" name="plumber">
+                <label for="Mobile_maintenance__plumber">Plumber</label>
+            </div>
+        </div>
+        <div class="formBody__photo">
+            <h2>Attach a photo:</h2>
+            <input type="file" name="photo" id="Mobile_maintenance__photo" placeholder="Photo">
+        </div>
+        <div class="formBody__datePicker">
+            <h2>When do you plan to start renovation?</h2>
+            <input type="date" name="date" id="Mobile_maintenance__date">
+        </div>
+        <div class="formBody__time formBody__checkbox">
+            <h2>Planned time:</h2>
+            <div>
+                <input type="radio" id="Mobile_maintenance__am" name="time">
+                <label for="Mobile_maintenance__am">up to 12 am</label>
+            </div>
+            <div>
+                <input type="radio" id="Mobile_maintenance__pm" name="time">
+                <label for="Mobile_maintenance__pm">after 12 pm</label>
+            </div>
+        </div>
+        <div class="formBody__text">
+            <input type="text" placeholder="Your name*" name="firstname" class="firstname" required>
+            <input type="tel" placeholder="Phone number*" name="phone" id="Mobile_maintenance__phone" required>
+            <input type="text" placeholder="Full address & post code*" name="address" id="Mobile_maintenance__address" required>
+            <input type="email" placeholder="Your e-mail" name="email" id="Mobile_maintenance__email">
+            <textarea name="comments" cols="30" rows="10" maxlength="3000" placeholder="Your comment"></textarea>
+        </div>
+        <input type="submit" value="Get a quote">
+    </form>
+</div>
+<script>
+    function formPagesMobile() {
+        let currFormPage = location.hash;
+        let fullhouseDom = document.querySelector(".Mobile_fullhouse");
+        let partialDom = document.querySelector(".Mobile_partial");
+        let maintenanceDom = document.querySelector(".Mobile_maintenance");
+        let fullhouseLinkDom = document.querySelector(".Mobile_fullhouseLink");
+        let partialLinkDom = document.querySelector(".Mobile_partialLink");
+        let maintenanceLinkDom = document.querySelector(".Mobile_maintenanceLink");
+        if( fullhouseDom &&
+            partialDom &&
+            maintenanceDom &&
+            fullhouseLinkDom &&
+            partialLinkDom &&
+            maintenanceLinkDom) {
+            if(currFormPage) {
+                switch (currFormPage) {
+                    case "#fullhouse":
+                        fullhouseDom.classList.remove("js_displaynone");
+                        partialDom.classList.add("js_displaynone");
+                        maintenanceDom.classList.add("js_displaynone");
+
+                        fullhouseLinkDom.classList.add("js_form__active");
+                        partialLinkDom.classList.remove("js_form__active");
+                        maintenanceLinkDom.classList.remove("js_form__active");
+                        break;
+                    case "#partial":
+                        fullhouseDom.classList.add("js_displaynone");
+                        partialDom.classList.remove("js_displaynone");
+                        maintenanceDom.classList.add("js_displaynone");
+
+                        fullhouseLinkDom.classList.remove("js_form__active");
+                        partialLinkDom.classList.add("js_form__active");
+                        maintenanceLinkDom.classList.remove("js_form__active");
+                        break;
+                    case "#maintenance":
+                        fullhouseDom.classList.add("js_displaynone");
+                        partialDom.classList.add("js_displaynone");
+                        maintenanceDom.classList.remove("js_displaynone");
+
+                        fullhouseLinkDom.classList.remove("js_form__active");
+                        partialLinkDom.classList.remove("js_form__active");
+                        maintenanceLinkDom.classList.add("js_form__active");
+                        break;
+                }
+            }
+        }
+    }
+    document.addEventListener("DOMContentLoaded", function () {
+        formPagesMobile();
+        window.addEventListener('popstate', formPagesMobile);
+
+        let jsRangeLabelDomMobile = document.querySelectorAll(".js_Mobile_rangeLabel");
+        if(jsRangeLabelDomMobile.length) {
+            jsRangeLabelDomMobile.forEach(function (label) {
+                let input = label.nextElementSibling;
+                if(input.tagName === "INPUT") {
+                    input.addEventListener("input", function (e) {
+                        let span = label.getElementsByTagName("span");
+                        if(span.length)
+                            span[0].innerText = input.value;
+                        else
+                            label.innerText = input.value;
+                    });
+                }
+            });
+        }
+
+        let partialRoomsMobile = document.querySelectorAll(".Mobile_formBody__rooms>div>input");
+        if(partialRoomsMobile.length) {
+            partialRoomsMobile.forEach(function (room) {
+                room.addEventListener("input", function (e) {
+                    switch (room.name) {
+                        case "bathroom":
+                            document.querySelector(".Mobile_bathroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "bedroom":
+                            document.querySelector(".Mobile_bedroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "hallway":
+                            document.querySelector(".Mobile_hallwaySize").classList.toggle("js_displaynone");
+                            break;
+                        case "kitchen":
+                            document.querySelector(".Mobile_kitchenSize").classList.toggle("js_displaynone");
+                            break;
+                        case "kidsroom":
+                            document.querySelector(".Mobile_kidsroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "livingroom":
+                            document.querySelector(".Mobile_livingroomSize").classList.toggle("js_displaynone");
+                            break;
+                        case "stairs":
+                            document.querySelector(".Mobile_stairsSize").classList.toggle("js_displaynone");
+                            break;
+                        case "extension":
+                            document.querySelector(".Mobile_extensionSize").classList.toggle("js_displaynone");
+                            break;
+                        case "loft":
+                            document.querySelector(".Mobile_loftSize").classList.toggle("js_displaynone");
+                            break;
+                        case "garge":
+                            document.querySelector(".Mobile_gargeSize").classList.toggle("js_displaynone");
+                            break;
+                    }
+                });
+            });
+        }
+        let noBudjetPartialDomMobile = document.getElementById("Mobile_partial__noBudget");
+        if(noBudjetPartialDomMobile) {
+            noBudjetPartialDomMobile.addEventListener("input", function (e) {
+                let budjetPartialDom = document.getElementById("Mobile_partial__budget");
+                budjetPartialDom.parentElement.classList.toggle("js_displaynone");
+            });
+        }
+
+        let noBudjetFullhouseDomMobile = document.getElementById("Mobile_fullhouse__noBudget");
+        if(noBudjetFullhouseDomMobile) {
+            noBudjetFullhouseDomMobile.addEventListener("input", function (e) {
+                let budjetFullhouseDomMobile = document.getElementById("Mobile_fullhouse__budget");
+                budjetFullhouseDomMobile.parentElement.classList.toggle("js_displaynone");
+            });
+        }
+    });
+</script>
